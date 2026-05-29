@@ -1,0 +1,30 @@
+# IA privada
+.ai/
+AGENTS.md
+skills/
+prompts/
+memory/
+
+# Java
+target/
+*.class
+
+# Maven
+.mvn/
+
+# IDEs
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Variables sensibles
+.env
+
+# OS
+.DS_Store
+
+# Node
+frontend/node_modules/
+
