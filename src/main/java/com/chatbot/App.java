@@ -58,6 +58,9 @@ public class App {
                 cache
         );
         Javalin app = AppConfig.createApp();
+        app.get("/", ctx -> {
+            ctx.result("Chatbot AI Platform is running 🚀");
+        });
 
         HealthController.register(app);
 
