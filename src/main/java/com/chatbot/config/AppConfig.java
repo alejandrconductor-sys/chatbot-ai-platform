@@ -16,7 +16,6 @@ public final class AppConfig {
                 cors.addRule(rule -> {
                     rule.allowHost("http://localhost:5173");
                     rule.allowHost("https://chatbot-ai-platform-gamma.vercel.app");
-                    rule.allowHost("*");
                 });
             });
 
