@@ -36,10 +36,10 @@ export default function ChatArea({
 
 
   return (
-    <main className="flex-1 flex flex-col bg-gray-950 h-full">
+    <main className="flex-1 flex flex-col bg-gray-950 h-full w-full relative">
       <button
         onClick={() => setSidebarOpen(true)}
-        className="md:hidden fixed top-4 left-4 z-50 bg-gray-800 p-2 rounded"
+        className="md:hidden fixed top-4 left-4 z-50 bg-gray-800 p-2 rounded shadow-lg"
       >
         ☰
       </button>

@@ -21,7 +21,14 @@ export default function ChatPage() {
   };
 
   return (
-    <div className="flex h-screen w-screen bg-gray-950 text-gray-100 overflow-hidden relative">
+    <div className="flex h-screen w-full bg-gray-950 text-gray-100 overflow-hidden">
+
+      {sidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-30 md:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
 
       <Sidebar
         conversations={conversations}
@@ -32,13 +39,6 @@ export default function ChatPage() {
         sidebarOpen={sidebarOpen}
         setSidebarOpen={setSidebarOpen}
       />
-
-      {sidebarOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 z-30 md:hidden"
-          onClick={() => setSidebarOpen(false)}
-        />
-      )}
 
       <ChatArea
         messages={messages}
