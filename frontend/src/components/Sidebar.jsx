@@ -24,7 +24,7 @@ const [title, setTitle] = useState('');
 
   return (
     <aside className={`
-      fixed top-0 left-0 z-40 h-full w-72 bg-gray-900 border-r border-gray-800
+      fixed md:static flex-shrink-0 top-0 left-0 z-40 h-full w-72 bg-gray-900 border-r border-gray-800
       flex flex-col
       transform transition-transform duration-300 ease-in-out
       ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
