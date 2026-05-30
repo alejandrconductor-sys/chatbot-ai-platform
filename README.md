@@ -1,5 +1,63 @@
 # 🚀 Chatbot AI Platform
 
+> **Production-ready** AI chatbot platform built with Java 17, Javalin, React, Groq Cloud AI, Ollama local models, Tavily internet search, and a persistent memory architecture.
+
+---
+
+## 🔗 Connect & Media
+
+*   🎥 **YouTube Video Demo:** [Watch the Walkthrough & Architecture Breakdown](https://www.youtube.com/watch?v=Ie80xlikpmc&t=186s)
+*   💼 **Professional Profile:** [Connect with me on LinkedIn](https://www.linkedin.com/in/rafael-alejandro-marquez-araujo-4276093b7)
+*   💻 **Source Code:** [GitHub Repository](https://github.com/alejandrconductor-sys/chatbot-ai-platform)
+
+---
+
+## 🧠 Overview
+
+**Chatbot AI Platform** is a hybrid AI assistant designed with modern backend engineering principles and real-world enterprise AI integration patterns. 
+
+The system seamlessly combines:
+*   ☁️ **Cloud AI Execution:** Lightning-fast inference powered by Groq Cloud.
+*   🖥️ **Local AI Execution:** Privacy-focused, offline LLM execution using Ollama.
+*   🌐 **Real-Time Internet Search:** Live web context fetching via Tavily Search API.
+*   🧠 **Persistent Conversational Memory:** Dynamic context injection into prompts.
+*   ⚡ **Intelligent Routing System:** Dynamic request triage to optimize token consumption and speed.
+*   🏗️ **Layered Architecture:** Strict separation of concerns for enterprise scalability.
+
+> **Note:** This project was built as a portfolio-grade AI engineering platform, moving away from simple local prototypes into a fully integrated, production-deployed Full-Stack system.
+
+---
+
+## 🏗️ System Architecture
+
+The application follows a rigorous layered backend design pattern:
+
+```text
+       ┌────────────────────────┐
+       │     React + Vite       │  (Frontend - Vercel)
+       └───────────┬────────────┘
+                   │ HTTP / REST
+       ┌───────────▼────────────┐
+       │  Javalin Controllers   │  (REST API Layer - Render)
+       └───────────┬────────────┘
+                   │
+       ┌───────────▼────────────┐
+       │    Service Layer       │  (Business Logic)
+       └───────────┬────────────┘
+                   │
+       ┌───────────▼────────────┐
+       │    AI Routing Layer    │  (Intelligent Triage)
+       └─────┬────────────┬─────┘
+             │            │
+ ┌───────────▼────┐ ┌─────▼──────────┐
+ │ Cloud Providers│ │ Local Provider │
+ │ (Groq / Tavily)│ │    (Ollama)    │
+ └────────────────┘ └────────────────┘
+             │
+       ┌─────▼──────────────┐
+       │ Persistence Layer  │  (DAO + HikariCP + MariaDB - Railway)
+       └────────────────────┘
+
 > Production-ready AI chatbot platform built with Java, Javalin, React, Groq Cloud AI, Ollama local models, Tavily internet search, and persistent memory architecture.
 
 ---
