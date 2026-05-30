@@ -24,9 +24,10 @@ const [title, setTitle] = useState('');
 
   return (
     <aside className={`
-      fixed md:static z-40 h-full bg-gray-900 border-r border-gray-800
-      w-72 transform transition-transform duration-300
-      ${sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
+      fixed top-0 left-0 z-40 h-full w-72 bg-gray-900 border-r border-gray-800
+      transform transition-transform duration-300
+      ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
+      md:translate-x-0
     `}>
     <button
       onClick={() => setSidebarOpen(false)}
