@@ -243,32 +243,42 @@ Create `.env`
 
 ```env
 # =========================
-# AI MODE
+# LOCAL MODE (OLLAMA), desactivado
 # =========================
+
+# DB_HOST=localhost
+# DB_PORT=3306
+# DB_NAME=chatbot_ai_platform
+# DB_USER=chatbot_user
+# DB_PASSWORD=
+
+
+# AI_MODE=local
+
+OLLAMA_BASE_URL=http://localhost:11434
+OLLAMA_MODEL=llama3.2:3b
+
+# =========================
+# CLOUD MODE (GROQ) activo
+# =========================
+
+DB_HOST=
+DB_PORT=
+DB_NAME=railway
+DB_USER=
+DB_PASSWORD=
+
 AI_MODE=cloud
 
-# =========================
-# GROQ
-# =========================
-GROQ_API_KEY=your_key
+GROQ_API_KEY=
+GROQ_MODEL=llama-3.3-70b-versatile
+
+PORT=
 
 # =========================
-# TAVILY
+# WEB SEARCH
 # =========================
-TAVILY_API_KEY=your_key
-
-# =========================
-# DATABASE
-# =========================
-DB_URL=jdbc:mariadb://localhost:3306/chatbot
-DB_USER=root
-DB_PASSWORD=password
-
-# =========================
-# OLLAMA
-# =========================
-OLLAMA_URL=http://localhost:11434
-OLLAMA_MODEL=llama3
+TAVILY_API_KEY=
 ```
 
 ---
