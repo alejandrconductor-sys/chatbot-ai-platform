@@ -1,7 +1,15 @@
 import { useState } from 'react';
 
-export default function Sidebar({ conversations, selectedId, onSelect, onCreate, loading }) {
-  const [title, setTitle] = useState('');
+export default function Sidebar({
+  conversations,
+  selectedId,
+  onSelect,
+  onCreate,
+  loading,
+  sidebarOpen,
+  setSidebarOpen
+}) {
+const [title, setTitle] = useState('');
 
   const handleCreate = async (e) => {
     e.preventDefault();
@@ -15,11 +23,20 @@ export default function Sidebar({ conversations, selectedId, onSelect, onCreate,
   };
 
   return (
-    <aside className="w-72 bg-gray-900 text-gray-100 flex flex-col h-full">
-      <div className="p-4 border-b border-gray-700">
-        <h1 className="text-lg font-semibold">Chatbot AI</h1>
-      </div>
-
+    <aside className={`
+      fixed md:static z-40 h-full bg-gray-900 border-r border-gray-800
+      w-72 transform transition-transform duration-300
+      ${sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
+    `}>
+    <button
+      onClick={() => setSidebarOpen(false)}
+      className="md:hidden absolute top-4 right-4 text-gray-400"
+    >
+      ✕
+    </button>
+     <h1 className="text-lg font-semibold p-4 border-b border-gray-800">
+        Chatbot AI
+     </h1>
       <form onSubmit={handleCreate} className="p-4 border-b border-gray-700 flex gap-2">
         <input
           className="flex-1 px-3 py-2 rounded bg-gray-800 border border-gray-600 text-sm focus:outline-none focus:border-blue-500"
@@ -56,6 +73,17 @@ export default function Sidebar({ conversations, selectedId, onSelect, onCreate,
           </button>
         ))}
       </nav>
+      <div className="p-3 text-xs text-gray-500 border-t border-gray-800 text-center space-y-1">
+        <div className="text-gray-300 font-semibold tracking-wide">
+          Chatbot AI
+        </div>
+        <div className="text-gray-500">
+          Java • React • MariaDB
+        </div>
+        <div className="text-gray-600">
+          Built by Rafael Marquez
+        </div>
+      </div>
     </aside>
   );
 }

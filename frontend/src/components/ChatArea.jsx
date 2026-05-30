@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import MessageBubble from './MessageBubble';
+import { motion } from "framer-motion";
 
 export default function ChatArea({
   messages,
@@ -8,6 +9,7 @@ export default function ChatArea({
   error,
   selectedId,
   onSend,
+  setSidebarOpen 
 }) {
   const [input, setInput] = useState('');
   const bottomRef = useRef(null);
@@ -32,9 +34,16 @@ export default function ChatArea({
     );
   }
 
+
   return (
     <main className="flex-1 flex flex-col bg-gray-950 h-full">
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+      <button
+        onClick={() => setSidebarOpen(true)}
+        className="md:hidden absolute top-4 left-4 z-50 bg-gray-800 p-2 rounded"
+      >
+        ☰
+      </button>
+      <div className="flex-1 overflow-y-auto p-4 space-y-4 pb-28">
         {loading && (
           <p className="text-gray-500 text-sm text-center">Loading messages...</p>
         )}
@@ -42,15 +51,20 @@ export default function ChatArea({
           <p className="text-gray-500 text-sm text-center">No messages yet</p>
         )}
         {messages.map((msg) => (
-          <MessageBubble key={msg.id} message={msg} />
-        ))}
-        {sending && (
-          <div className="flex justify-start">
-            <div className="bg-gray-800 text-gray-400 px-4 py-2.5 rounded-2xl rounded-bl-md text-sm">
-              ...
+          msg.role === 'user' ? (
+            <div key={msg.id} className="flex justify-end">
+              <div className="bg-blue-600 px-4 py-2 rounded-2xl max-w-[75%]">
+                {msg.content}
+              </div>
             </div>
-          </div>
-        )}
+          ) : (
+            <div key={msg.id} className="flex justify-start">
+              <div className="bg-gray-800 px-4 py-2 rounded-2xl max-w-[75%]">
+                {msg.content}
+              </div>
+            </div>
+          )
+        ))}
         <div ref={bottomRef} />
       </div>
 
