@@ -51,7 +51,7 @@ const [title, setTitle] = useState('');
         <form onSubmit={handleCreate} className="p-2 flex gap-2">
           <input
             className="flex-1 px-3 py-2 rounded bg-gray-800 border border-gray-600 text-sm"
-            placeholder="New conversation..."
+            placeholder="Haz tu propia conversación..."
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
@@ -94,8 +94,8 @@ const [title, setTitle] = useState('');
       </div>
 
       {/* MEMORY NOTICE */}
-      <div className="mx-3 mb-3 p-3 rounded-xl border border-blue-500/30 bg-blue-500/10 text-blue-200 text-xs leading-relaxed shadow-lg">
-        💡 Prueba la memoria de la IA: abre chats anteriores y comprueba cómo recuerda el contexto de cada conversación.
+      <div className="mx-3 mb-3 p-4 rounded-xl border border-yellow-400 bg-yellow-500/20 text-yellow-100 text-sm font-semibold leading-relaxed shadow-xl">
+        💡 Prueba la memoria de la IA: entra en chats anteriores y comprueba cómo recuerda el contexto de cada conversación.
       </div>
 
       {/* FOOTER FIJO */}
