@@ -93,6 +93,11 @@ const [title, setTitle] = useState('');
 
       </div>
 
+      {/* MEMORY NOTICE */}
+      <div className="mx-3 mb-3 p-3 rounded-xl border border-blue-500/30 bg-blue-500/10 text-blue-200 text-xs leading-relaxed shadow-lg">
+        💡 Prueba la memoria de la IA: abre chats anteriores y comprueba cómo recuerda el contexto de cada conversación.
+      </div>
+
       {/* FOOTER FIJO */}
       <div className="p-3 text-xs text-gray-500 border-t border-gray-800 text-center space-y-1">
         <div className="text-gray-300 font-semibold">
